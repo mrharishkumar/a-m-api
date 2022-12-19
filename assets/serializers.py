@@ -4,6 +4,7 @@ from .models import Asset
 
 
 class AssetSerializer(serializers.ModelSerializer):
+    # location = serializers.SerializerMethodField('get_asset_name')
 
     class Meta:
         model = Asset
@@ -13,5 +14,8 @@ class AssetSerializer(serializers.ModelSerializer):
             "model",
             "company",
             "image_url",
+            "status",
         ]
 
+        # def get_asset_name(self, obj):
+        #     return obj.asset_name

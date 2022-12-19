@@ -6,4 +6,4 @@ from .models import AssetRequest
 
 @admin.register(AssetRequest)
 class AssetRequestAdmin(admin.ModelAdmin):
-    list_display=['asset_id','employee_id','remarks','status']
+    list_display=['id','asset_id','employee_id','remarks','status']

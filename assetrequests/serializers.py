@@ -8,6 +8,7 @@ class AssetRequestSerializer(serializers.ModelSerializer):
     class Meta:
         model = AssetRequest
         fields = [
+            "id",
             "asset_id",
             "employee_id",
             "remarks",

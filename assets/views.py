@@ -4,6 +4,8 @@ from rest_framework import status
 
 from .models import Asset
 from .serializers import AssetSerializer
+# from .mypagination import MyPagination
+# from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -14,6 +16,7 @@ def asset_list_view(request, *args, **kwargs):
     try:
         qs = Asset.objects.all()
         data = AssetSerializer(qs, many=True).data
+        # page=Paginator(data,4)
         return Response({
             'data': data,
             'error': [],
@@ -32,7 +35,7 @@ def asset_list_view(request, *args, **kwargs):
 def asset_details_view(request, *args, **kwargs):
 
     try:
-        qs = Asset.objects.filter(pk=kwargs['pk'])[0]
+        qs = Asset.objects.get(pk=kwargs['pk'])
         print("qs", qs)
         data = AssetSerializer(qs).data
         print("data", data)

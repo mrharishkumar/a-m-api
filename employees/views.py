@@ -33,7 +33,7 @@ def employee_view(request, pk=None, *args, **kwargs):
 def employee_details_view(request, *args, **kwargs):
 
     try:
-        qs = Employee.objects.filter(pk=kwargs['pk'])[0]
+        qs = Employee.objects.get(pk=kwargs['pk'])
         data = EmployeeSerializer(qs).data
         return Response({
             'data': [data],

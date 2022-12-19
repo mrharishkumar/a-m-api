@@ -33,7 +33,7 @@ def branch_list_view(request, *args, **kwargs):
 def brach_details_view(request, *args, **kwargs):
 
     try:
-        qs = Branch.objects.filter(pk=kwargs['pk'])[0]
+        qs = Branch.objects.get(pk=kwargs['pk'])
         data = BranchSerializer(qs).data
 
         return Response({
