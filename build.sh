@@ -2,8 +2,10 @@
 
 set -o errexit
 
-poetry lock --no-update
+# poetry lock --no-update
 
-poetry install
+# poetry install
+
+pip install -r requirements
 
 python manage.py migrate
