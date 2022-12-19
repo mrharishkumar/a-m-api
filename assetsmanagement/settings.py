@@ -35,7 +35,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ['assets-management.onrender.com']
+ALLOWED_HOSTS = ['assets-management.onrender.com', 'hkam.netlify.app/']
 
 
 # Application definition
