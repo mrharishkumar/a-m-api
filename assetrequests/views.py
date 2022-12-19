@@ -73,15 +73,15 @@ def asset_request_add_view(request, *args, **kwargs):
             employee_id = serializer.validated_data.get('employee_id')
             remarks = serializer.validated_data.get('remarks')
             asset = Asset.objects.filter(pk=request.data['asset_id'])[0]
-            verify = AssetRequest.objects.filter(asset_id=asset)                        # CHeck the data is already present or not
-            if verify:
-                return Response({
-                    "data":[],
-                    "error":"The Request Is Already Presented"
-                })
+            # verify = AssetRequest.objects.filter(asset_id=asset)                        # CHeck the data is already present or not
+            # if verify:
+            #     return Response({
+            #         "data":[],
+            #         "error":"The Request Is Already Presented"
+            #     })
             asset_data = AssetSerializer(asset).data
             message=get_template("email.html").render(asset_data)
-            mail = EmailMessage(subject="Request For Asset",body=message,from_email='rahul.katoch@impressico.com',to=['rahulkatoch99@gmail.com','harish.kumar@impressico.com'])
+            mail = EmailMessage(subject="Request For Asset",body=message,from_email='harish.kumar@impressico.com',to=['rahulkatoch99@gmail.com','harish.kumar@impressico.com'])
             mail.content_subtype = "html"
             mail.mixed_subtype = 'related'
             mail.send()

@@ -184,8 +184,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'rahul.katoch@impressico.com'
-EMAIL_HOST_PASSWORD = 'Rahulved@123'
+EMAIL_HOST_USER = env('EMAIL')
+EMAIL_HOST_PASSWORD = env('PASSWORD')
 EMAIL_USE_TLS = True
 
 
