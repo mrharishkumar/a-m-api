@@ -81,7 +81,7 @@ def asset_request_add_view(request, *args, **kwargs):
             #     })
             asset_data = AssetSerializer(asset).data
             message=get_template("email.html").render(asset_data)
-            mail = EmailMessage(subject="Request For Asset",body=message,from_email='harish.kumar@impressico.com',to=['rahulkatoch99@gmail.com','harish.kumar@impressico.com'])
+            mail = EmailMessage(subject="Request For Asset",body=message,from_email='rahul.katoch@impressico.com',to=['rahulkatoch99@gmail.com','harish.kumar@impressico.com'])
             mail.content_subtype = "html"
             mail.mixed_subtype = 'related'
             mail.send()
@@ -114,6 +114,7 @@ def asset_request_add_view(request, *args, **kwargs):
 
     except Exception as e:
         e = str(e)
+        print(e)
 
         return Response({
             'data': [],
