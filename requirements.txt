@@ -7,5 +7,5 @@ psycopg2
 django-environ
 djangorestframework-simplejwt
 dj-database-url
-gunicorn = "^20.1.0"
+gunicorn
 whitenoise
