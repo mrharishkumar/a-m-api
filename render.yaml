@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: assetsmanagement
+    databaseName: assets_management
+    user: harishkumar
 
 services:
   - type: web
-    name: mysite
+    name: assetsmanagement
     env: python
     buildcommand: "./build.sh"
-    startCommand: "gunicorn mysite.wsgi:application"
+    startCommand: "gunicorn assetsmanagement.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: assets_management
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
