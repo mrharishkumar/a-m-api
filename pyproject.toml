@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "a-m-api"
+version = "0.1.0"
+description = ""
+authors = ["harish.kumar <harish.kumar@impressico.com>"]
+readme = "README.md"
+packages = [{include = "a_m_api"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+django = "^4.1.4"
+djangorestframework = "^3.14.0"
+pyyaml = "^6.0"
+requests = "^2.28.1"
+django-cors-headers = "^3.13.0"
+psycopg2 = "^2.9.5"
+django-environ = "^0.9.0"
+djangorestframework-simplejwt = "^5.2.2"
+dj-database-url = "^1.2.0"
+gunicorn = "^20.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
