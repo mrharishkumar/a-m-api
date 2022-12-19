@@ -2,7 +2,7 @@
 
 set -o errexit
 
-poetry lock
+poetry lock --no-update
 
 poetry install
 
