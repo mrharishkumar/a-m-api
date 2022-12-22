@@ -1,11 +1,10 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
-
 from .models import Asset
 from .serializers import AssetSerializer
-# from .mypagination import MyPagination
-# from django.core.paginator import Paginator
+from .models import AssetStatus
+
 
 # Create your views here.
 
@@ -14,7 +13,7 @@ from .serializers import AssetSerializer
 def asset_list_view(request, *args, **kwargs):
 
     try:
-        qs = Asset.objects.all()
+        qs = Asset.objects.filter(status=AssetStatus.AVAILABLE)
         data = AssetSerializer(qs, many=True).data
         # page=Paginator(data,4)
         return Response({
@@ -80,3 +79,4 @@ def asset_add_view(request, *args, **kwargs):
             'data': [],
             'errors': [e],
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+

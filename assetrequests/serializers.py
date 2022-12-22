@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from .models import User
 
 from .models import AssetRequest
 
@@ -14,3 +15,9 @@ class AssetRequestSerializer(serializers.ModelSerializer):
             "remarks",
             "status",
         ]
+
+
+class UserSerializer(serializers.Serializer):
+    class Meta:
+        model = User
+        fields = ('username', 'email')

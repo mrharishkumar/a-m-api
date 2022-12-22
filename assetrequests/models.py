@@ -1,7 +1,6 @@
 from django.db import models
 from assets.models import Asset
 from django.contrib.auth.models import User
-
 # Create your models here.
 
 
@@ -9,6 +8,7 @@ class Status(models.TextChoices):
     GRANTED = 'GRANTED'
     DENIED = 'DENIED'
     PENDING = 'PENDING'
+    RETURNED = 'RETURNED'
 
 
 class AssetRequest(models.Model):
